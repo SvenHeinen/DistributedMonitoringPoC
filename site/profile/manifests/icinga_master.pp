@@ -79,6 +79,14 @@ class profile::icinga_master {
     }
   }
 
+  class{ '::icinga2::feature::idomysql':
+    user          => 'icinga2',
+    password      => 'supersecret',
+    database      => 'icinga2',
+    import_schema => true,
+    require       => Mysql::Db['icinga2'],
+  }
+
   class { '::icinga2::feature::api':
     accept_commands => true,
     # when having multiple masters, you should enable:
