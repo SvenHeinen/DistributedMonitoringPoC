@@ -41,7 +41,7 @@ class profile::icinga_master {
   mysql::db { 'icinga2':
     user     => 'icinga2',
     password => 'supersecret',
-    host     => '127.0.0.1',
+    host     => 'localhost',
     grant    => ['SELECT', 'INSERT', 'UPDATE', 'DELETE', 'DROP', 'CREATE VIEW', 'CREATE', 'INDEX', 'EXECUTE', 'ALTER'],
   }
 
@@ -51,6 +51,7 @@ class profile::icinga_master {
     db_type       => 'mysql',
     db_host       => 'localhost',
     db_port       => 3306,
+    db_name       => 'icingaweb2'
     db_username   => 'icingaweb2',
     db_password   => 'icingaweb2',
     require       => Mysql::Db['icingaweb2'],
@@ -70,12 +71,6 @@ class profile::icinga_master {
     }
   }
   
-  icingaweb2::config::authmethod {'db-auth':
-    backend  => 'db',
-    resource => 'icingaweb2',
-    order    => '01',
-  }
-
   class { 'icinga2':
     confd     => false,
     features  => ['checker','mainlog','notification','statusdata','compatlog','command'],
