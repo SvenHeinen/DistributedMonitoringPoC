@@ -51,7 +51,7 @@ class profile::icinga_master {
     db_type       => 'mysql',
     db_host       => 'localhost',
     db_port       => 3306,
-    db_name       => 'icingaweb2'
+    db_name       => 'icingaweb2',
     db_username   => 'icingaweb2',
     db_password   => 'icingaweb2',
     require       => Mysql::Db['icingaweb2'],
