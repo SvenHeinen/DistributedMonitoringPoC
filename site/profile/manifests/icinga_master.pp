@@ -69,6 +69,13 @@ class profile::icinga_master {
       }
     }
   }
+  
+  icingaweb2::config::authmethod {'db-auth':
+    backend  => 'db',
+    resource => 'icingaweb2',
+    order    => '01',
+  }
+
   class { 'icinga2':
     confd     => false,
     features  => ['checker','mainlog','notification','statusdata','compatlog','command'],
