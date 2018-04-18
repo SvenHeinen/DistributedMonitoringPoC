@@ -10,6 +10,7 @@ mod 'puppetlabs-concat', '4.2.1'
 mod 'puppetlabs-vcsrepo', '2.3.0'
 mod 'puppetlabs-translate', '1.1.0'
 mod 'puppet-staging', '3.2.0'
+mod 'stahnma-epel', '1.3.0'
 
 # PuppetDB modules
 mod 'puppetlabs-puppetdb', '6.0.2'
