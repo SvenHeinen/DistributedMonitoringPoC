@@ -111,7 +111,7 @@ class profile::icinga_master {
     zones           => {
       'master' => {
         'endpoints' => ['localhost'],
-      }
+      },
       'satellite' => {
         'endpoints' => ['icingaslave'],
         'parent'    => 'master'

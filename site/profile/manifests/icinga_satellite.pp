@@ -20,7 +20,7 @@ class profile::icinga_satellite {
     zones           => {
       'master' => {
         'endpoints' => ['puppet'],
-      }
+      },
       'satellite' => {
         'endpoints' => ['icingaslave'],
         'parent'    => 'master'
