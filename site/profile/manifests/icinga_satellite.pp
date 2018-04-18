@@ -1,7 +1,8 @@
 class profile::icinga_satellite {
 
   class { '::icinga2':
-    confd     => false,
+    manage_repo => true,
+    confd     => true,
     features  => ['checker','mainlog'],
     constants => {
       'ZoneName' => 'satellite',
@@ -26,5 +27,9 @@ class profile::icinga_satellite {
         'parent'    => 'master'
       }
     }
+  }
+
+  icinga2::object::zone { 'global-templates':
+    global => true,
   }
 }
