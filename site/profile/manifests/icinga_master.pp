@@ -75,11 +75,10 @@ class profile::icinga_master {
     type        => 'db',
     db_type     => 'mysql',
     host        => 'localhost',
-    port        => '3306',
+    port        => 3306,
     db_name     => 'director',
     db_username => 'director',
     db_password => 'some-password',
-    db_encoding => 'utf8'
   }
   
   class { 'icinga2':
