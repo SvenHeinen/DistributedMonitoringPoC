@@ -83,7 +83,7 @@ class profile::icinga_master {
   }
   
   class { 'icinga2':
-    confd     => false,
+    confd     => true,
     features  => ['checker','mainlog','notification','statusdata','compatlog','command'],
     constants => {
       'ZoneName' => 'master',
