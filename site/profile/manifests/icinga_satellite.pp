@@ -12,14 +12,14 @@ class profile::icinga_satellite {
     accept_commands => true,
     accept_config => true,
     endpoints       => {
-      'icingaslave'    => {}
+      'icingaslave'    => {},
       'puppet'  => {
         'host'  => '10.0.2.5',
       }
     },
     zones           => {
       'master' => {
-        'endpoints' => ['localhost'],
+        'endpoints' => ['puppet'],
       }
       'satellite' => {
         'endpoints' => ['icingaslave'],
