@@ -104,7 +104,7 @@ class profile::icinga_master {
     # accept_config => true,
     endpoints       => {
       'localhost'    => {},
-      'icingaslave'  => {
+      'icingaslave.qnh.local'  => {
         'host'  => '10.0.2.6',
       }
     },
@@ -113,7 +113,7 @@ class profile::icinga_master {
         'endpoints' => ['localhost'],
       },
       'satellite' => {
-        'endpoints' => ['icingaslave'],
+        'endpoints' => ['icingaslave.qnh.local'],
         'parent'    => 'master'
       }
     }

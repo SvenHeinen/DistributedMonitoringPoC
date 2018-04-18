@@ -13,7 +13,7 @@ class profile::icinga_satellite {
     accept_commands => true,
     accept_config => true,
     endpoints       => {
-      'icingaslave'    => {},
+      'icingaslave.qnh.local'    => {},
       'puppet'  => {
         'host'  => '10.0.2.5',
       }
@@ -23,7 +23,7 @@ class profile::icinga_satellite {
         'endpoints' => ['puppet'],
       },
       'satellite' => {
-        'endpoints' => ['icingaslave'],
+        'endpoints' => ['icingaslave.qnh.local'],
         'parent'    => 'master'
       }
     }
