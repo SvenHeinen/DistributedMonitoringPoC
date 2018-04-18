@@ -104,11 +104,17 @@ class profile::icinga_master {
     # accept_config => true,
     endpoints       => {
       'localhost'    => {}
-    
+      'icingaslave'  => {
+        'host'  => '10.0.2.6'
+      }
     },
     zones           => {
       'master' => {
         'endpoints' => ['localhost'],
+      }
+      'satellite' => {
+        'endpoints' => ['icingaslave'],
+        'parent'    => 'master'
       }
     }
   }

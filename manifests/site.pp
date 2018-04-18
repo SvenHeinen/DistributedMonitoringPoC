@@ -28,3 +28,7 @@ File { backup => false }
 node localhost {
   include role::icinga_master
 }
+
+node icingaslave {
+  include role::icinga_satellite
+}
