@@ -14,7 +14,7 @@ class profile::icinga_satellite {
     endpoints       => {
       'icingaslave'    => {}
       'puppet'  => {
-        'host'  => '10.0.2.5'
+        'host'  => '10.0.2.5',
       }
     },
     zones           => {
