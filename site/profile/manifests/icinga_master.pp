@@ -79,6 +79,7 @@ class profile::icinga_master {
     db_name     => 'director',
     db_username => 'director',
     db_password => 'some-password',
+    db_charset  => "utf8"
   }
   
   class { 'icinga2':
