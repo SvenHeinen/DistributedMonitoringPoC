@@ -1,6 +1,6 @@
 class profile::icinga_satellite(
-  $slave_zone,
-  $parent_endpoints,
+  $slave_zone = 'satellite',
+  $parent_endpoints = ['puppet'],
   $parent_zone = 'master',
   $slave_ip = $::ipaddress,
 ) {

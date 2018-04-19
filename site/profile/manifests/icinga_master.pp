@@ -122,7 +122,7 @@ class profile::icinga_master {
     global => true,
     order  => '47',
   }
-  
+
   file { ['/etc/icinga2/zones.d/master',
     '/etc/icinga2/zones.d/windows-commands',
     '/etc/icinga2/zones.d/linux-commands',
@@ -187,6 +187,6 @@ class profile::icinga_master {
     owner  => 'icinga',
     group  => 'icinga',
     mode   => '0640',
-    source => 'puppet:///modules/profile/icinga2/templates.conf',
+    source => 'puppet:///modules/profile/files/templates.conf',
 }
 }
