@@ -103,14 +103,14 @@ class profile::icinga_master {
     # when having multiple masters, you should enable:
     # accept_config => true,
     endpoints       => {
-      'localhost'    => {},
+      'puppet'    => {},
       'icingaslave.qnh.local'  => {
         'host'  => '10.0.2.6',
       }
     },
     zones           => {
       'master' => {
-        'endpoints' => ['localhost'],
+        'endpoints' => ['puppet'],
       },
       'satellite' => {
         'endpoints' => ['icingaslave.qnh.local'],
