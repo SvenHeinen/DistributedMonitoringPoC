@@ -29,7 +29,7 @@ class profile::icinga_satellite(
     }
   }
 
-  ::icinga2::object::endpoint { $parent_endpoints: }
+#  ::icinga2::object::endpoint { $parent_endpoints: }
 
   ::icinga2::object::zone { $parent_zone:
     endpoints => $parent_endpoints,
