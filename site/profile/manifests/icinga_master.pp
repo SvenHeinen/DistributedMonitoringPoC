@@ -100,8 +100,7 @@ class profile::icinga_master {
 
   class { '::icinga2::feature::api':
     accept_commands => true,
-    # when having multiple masters, you should enable:
-    # accept_config => true,
+    accept_config => true,
     endpoints       => {
       'puppet'    => {},
       'icingaslave.qnh.local'  => {
