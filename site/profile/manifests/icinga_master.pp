@@ -89,6 +89,7 @@ class profile::icinga_master {
     features       => ['checker','mainlog','notification','statusdata','compatlog','command'],
     constants      => {
       'ZoneName' => 'master',
+      'NodeName' => $hostname
     }
   }
 
