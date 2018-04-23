@@ -107,6 +107,9 @@ class profile::icinga_master {
       'ZoneName' => {
         'endpoints' => [ 'puppet' ],
       }
+    },
+    endpoints       => {
+      'NodeName'  => {},
     }
   }
 
