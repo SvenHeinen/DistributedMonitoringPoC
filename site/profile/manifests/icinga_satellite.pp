@@ -47,7 +47,7 @@ class profile::icinga_satellite(
   }
 
   @@::icinga2::object::zone { $slave_zone:
-    endpoints => [ $::downcase_fqdn ],
+    endpoints => $downcase_fqdn,
     parent    => $parent_zone,
     tag       => "icinga2::parent::${parent_zone}",
   }
