@@ -12,6 +12,7 @@ class profile::icinga_satellite(
     confd     => true,
     constants => {
       'ZoneName' => $slave_zone,
+      'NodeName' => $hostname
     },
   }
 
