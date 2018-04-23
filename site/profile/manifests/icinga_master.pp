@@ -107,6 +107,7 @@ class profile::icinga_master {
       'ZoneName' => {
         'endpoints' => [ 'puppet' ],
       }
+    }
   }
 
   icinga2::object::zone { ['global-templates', 'windows-commands', 'linux-commands']:
