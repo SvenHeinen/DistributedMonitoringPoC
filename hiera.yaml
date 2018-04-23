@@ -9,4 +9,5 @@ hierarchy:
     data_hash: yaml_data
     paths:
       - "nodes/%{trusted.certname}.yaml"
+      - "%{kernel}.yaml"
       - 'common.yaml'
