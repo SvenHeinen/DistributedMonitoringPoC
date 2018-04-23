@@ -3,16 +3,18 @@ class profile::icinga_satellite(
   $parent_endpoints,
   $parent_zone = 'master',
   $slave_ip = $::ipaddress,
-) {
+)
+ {
 
   validate_array($parent_endpoints)
+  downcase_fqdn = downcase($fqdn)
 
   class { '::icinga2':
     manage_repo => true,
     confd     => true,
     constants => {
       'ZoneName' => $slave_zone,
-      'NodeName' => $fqdn
+      'NodeName' => $downcase_fqdn
     },
   }
 
@@ -38,13 +40,13 @@ class profile::icinga_satellite(
     order  => '47',
   }
 
-  @@::icinga2::object::endpoint { $::fqdn:
+  @@::icinga2::object::endpoint { $::downcase_fqdn:
     host => $slave_ip,
     tag  => "icinga2::parent::${parent_zone}",
   }
 
   @@::icinga2::object::zone { $slave_zone:
-    endpoints => [ $::fqdn ],
+    endpoints => [ $::downcase_fqdn ],
     parent    => $parent_zone,
     tag       => "icinga2::parent::${parent_zone}",
   }
@@ -60,7 +62,7 @@ class profile::icinga_satellite(
   ::Icinga2::Object::Endpoint <<| tag == "icinga2::parent::${slave_zone}" |>>
   ::Icinga2::Object::Zone <<| tag == "icinga2::parent::${slave_zone}" |>>
 
-  @@::icinga2::object::host { $::fqdn:
+  @@::icinga2::object::host { $::downcase_fqdn:
     # Puppet 4 syntax
     * => deep_merge({
       display_name => $::hostname,
