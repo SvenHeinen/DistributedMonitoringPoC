@@ -100,22 +100,7 @@ class profile::icinga_master {
 
   class { '::icinga2::feature::api':
     accept_commands => true,
-    accept_config => true,
-    endpoints       => {
-      'puppet'    => {},
-      'icingaslave.qnh.local'  => {
-        'host'  => '10.0.2.6',
-      }
-    },
-    zones           => {
-      'master' => {
-        'endpoints' => ['puppet'],
-      },
-      # 'satellite' => {
-      #   'endpoints' => ['icingaslave.qnh.local'],
-      #   'parent'    => 'master'
-      # }
-    }
+    accept_config   => true,
   }
 
   icinga2::object::zone { ['global-templates', 'windows-commands', 'linux-commands']:
