@@ -1,5 +1,5 @@
 ---
 profile::icinga_agent::parent_zone: 'satellite2'
-profile::icinga_satellite::parent_endpoints:
-  icingaslave.qnh.local:
+profile::icinga_agent::parent_endpoints:
+  'icingaslave2.qnh.local':
     host: '10.0.2.7'
