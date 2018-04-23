@@ -11,6 +11,9 @@ class profile::icinga_agent(
     manage_repo => true,
     confd       => false,
     features  => ['mainlog'],
+    constants => {
+      'NodeName' => $downcase_fqdn
+    },
   }
 
   # Feature: api
@@ -19,8 +22,8 @@ class profile::icinga_agent(
     accept_commands => true,
     zones           => {
       'ZoneName' => {
-        'NodeName' => $downcase_fqdn,
-        'parent'   => $parent_zone,
+        'endpoints' => [ 'NodeName' ],
+        'parent'    => $parent_zone,
       }
     }
   }
