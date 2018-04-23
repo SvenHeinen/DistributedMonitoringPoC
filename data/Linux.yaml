@@ -6,4 +6,4 @@ icinga2::host:
       'disk /':
         disk_partition: /
   import:
-    - linux-host
+    - 'linux-host'
