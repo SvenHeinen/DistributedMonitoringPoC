@@ -83,7 +83,7 @@ class profile::icinga_master {
   }
   
   class { 'icinga2':
-    manage_repo    => true,
+#    manage_repo    => true,
     purge_features => false,
     confd          => false,
     features       => ['checker','mainlog','notification','statusdata','compatlog','command'],
