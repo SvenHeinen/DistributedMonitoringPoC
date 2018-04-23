@@ -40,7 +40,7 @@ class profile::icinga_satellite(
     order  => '47',
   }
 
-  @@::icinga2::object::endpoint { $::downcase_fqdn:
+  @@::icinga2::object::endpoint { $downcase_fqdn:
     host => $slave_ip,
     tag  => "icinga2::parent::${parent_zone}",
   }
@@ -62,7 +62,7 @@ class profile::icinga_satellite(
   ::Icinga2::Object::Endpoint <<| tag == "icinga2::parent::${slave_zone}" |>>
   ::Icinga2::Object::Zone <<| tag == "icinga2::parent::${slave_zone}" |>>
 
-  @@::icinga2::object::host { $::downcase_fqdn:
+  @@::icinga2::object::host { $downcase_fqdn:
     # Puppet 4 syntax
     * => deep_merge({
       display_name => $::hostname,
