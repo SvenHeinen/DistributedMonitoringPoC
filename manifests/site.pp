@@ -33,6 +33,6 @@ node 'icingaslave.qnh.local', 'icingaslave2.qnh.local' {
   include role::icinga_satellite
 }
 
-node localhost {
+node icingaagent.qnh.local {
   include role::normal
 }
