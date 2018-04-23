@@ -11,7 +11,7 @@ class profile::icinga_satellite(
 
   class { '::icinga2':
     manage_repo => true,
-    confd     => true,
+    confd     => false,
     constants => {
       'ZoneName' => $slave_zone,
       'NodeName' => $downcase_fqdn
