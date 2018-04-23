@@ -18,15 +18,9 @@ class profile::icinga_satellite(
   class { '::icinga2::feature::api':
     accept_commands => true,
     accept_config => true,
-    endpoints       => {
-      'icingaslave.qnh.local'    => {},
-      'puppet'  => {
-        'host'  => '10.0.2.5',
-      }
-    },
     zones           => {
       'ZoneName' => {
-        'endpoints' => ['icingaslave.qnh.local'],
+        'endpoints' => [ 'NodeName' ],
         'parent'    => $parent_zone,
       }
     }
