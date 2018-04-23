@@ -83,9 +83,11 @@ class profile::icinga_master {
   }
   
   class { 'icinga2':
-    confd     => true,
-    features  => ['checker','mainlog','notification','statusdata','compatlog','command'],
-    constants => {
+    manage_repo    => true,
+    purge_features => false,
+    confd          => false,
+    features       => ['checker','mainlog','notification','statusdata','compatlog','command'],
+    constants      => {
       'ZoneName' => 'master',
     }
   }
