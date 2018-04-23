@@ -187,6 +187,6 @@ class profile::icinga_master {
     owner  => 'icinga',
     group  => 'icinga',
     mode   => '0640',
-    source => 'puppet:///site/profile/files/templates.conf',
+    source => 'puppet:///site/profile/templates.conf',
 }
 }
