@@ -1,9 +1,12 @@
 class profile::icinga_satellite(
   $slave_zone,
-  $parent_endpoint,
+  $parent_endpoints,
   $parent_zone = 'master',
   $slave_ip = $::ipaddress,
 ) {
+
+  validate_array($parent_endpoints)
+
   class { '::icinga2':
     manage_repo => true,
     confd     => true,
@@ -29,7 +32,7 @@ class profile::icinga_satellite(
     }
   }
 
-#  ::icinga2::object::endpoint { $parent_endpoints: }
+  ::icinga2::object::endpoint { $parent_endpoints: }
 
   ::icinga2::object::zone { $parent_zone:
     endpoints => $parent_endpoints,
