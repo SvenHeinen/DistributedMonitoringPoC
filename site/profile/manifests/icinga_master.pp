@@ -111,10 +111,10 @@ class profile::icinga_master {
       'master' => {
         'endpoints' => ['puppet'],
       },
-      'satellite' => {
-        'endpoints' => ['icingaslave.qnh.local'],
-        'parent'    => 'master'
-      }
+      # 'satellite' => {
+      #   'endpoints' => ['icingaslave.qnh.local'],
+      #   'parent'    => 'master'
+      # }
     }
   }
 
