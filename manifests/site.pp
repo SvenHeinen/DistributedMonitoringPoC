@@ -29,6 +29,6 @@ node localhost {
   include role::icinga_master
 }
 
-node icingaslave.qnh.local {
+node 'icingaslave.qnh.local', 'icingaslave2.qnh.local' {
   include role::icinga_satellite
 }
