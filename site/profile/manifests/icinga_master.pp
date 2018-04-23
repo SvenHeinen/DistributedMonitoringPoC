@@ -182,11 +182,11 @@ class profile::icinga_master {
   ::Icinga2::Object::Host <<| |>>
 
   # Static config files
-  file { '/etc/icinga2/zones.d/global-templates/templates.conf':
-    ensure => file,
-    owner  => 'icinga',
-    group  => 'icinga',
-    mode   => '0640',
-    source => 'puppet:///site/profile/files/templates.conf',
-}
+#   file { '/etc/icinga2/zones.d/global-templates/templates.conf':
+#     ensure => file,
+#     owner  => 'icinga',
+#     group  => 'icinga',
+#     mode   => '0640',
+#     source => 'puppet:///site/profile/files/templates.conf',
+# }
 }
