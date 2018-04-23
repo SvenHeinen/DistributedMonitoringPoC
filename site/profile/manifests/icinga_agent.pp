@@ -37,11 +37,12 @@ class profile::icinga_agent(
   }
 
   @@::icinga2::object::endpoint { $::fqdn:
+    endpoint_name => $downcase_fqdn,
     target => "/etc/icinga2/zones.d/${parent_zone}/${::hostname}.conf",
   }
 
   @@::icinga2::object::zone { $::fqdn:
-    endpoints => [ $::fqdn ],
+    endpoints => [$downcase_fqdn],
     parent    => $parent_zone,
     target    => "/etc/icinga2/zones.d/${parent_zone}/${::hostname}.conf",
   }
