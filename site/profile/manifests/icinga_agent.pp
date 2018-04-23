@@ -19,8 +19,8 @@ class profile::icinga_agent(
     accept_commands => true,
     zones           => {
       'ZoneName' => {
-        'endpoints' => [ 'NodeName' ],
-        'parent'    => $parent_zone,
+        'NodeName' => $downcase_fqdn
+        'parent'   => $parent_zone,
       }
     }
   }
