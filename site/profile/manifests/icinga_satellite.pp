@@ -7,7 +7,7 @@ class profile::icinga_satellite(
  {
 
   validate_array($parent_endpoints)
-  downcase_fqdn = downcase($fqdn)
+  $downcase_fqdn = downcase($fqdn)
 
   class { '::icinga2':
     manage_repo => true,
