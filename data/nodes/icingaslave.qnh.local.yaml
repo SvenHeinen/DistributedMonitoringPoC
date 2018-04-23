@@ -1,4 +1,4 @@
 ---
-profile::icinga2::slave::slave_zone: 'satellite'
-profile::icinga2::slave::parent_endpoints:
+profile::icinga_satellite::slave_zone: 'satellite'
+profile::icinga_satellite::parent_endpoints:
 - 'puppet'
