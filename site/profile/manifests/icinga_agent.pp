@@ -19,7 +19,7 @@ class profile::icinga_agent(
     accept_commands => true,
     zones           => {
       'ZoneName' => {
-        'NodeName' => $downcase_fqdn
+        'NodeName' => $downcase_fqdn,
         'parent'   => $parent_zone,
       }
     }
