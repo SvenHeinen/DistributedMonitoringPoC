@@ -50,7 +50,7 @@ class profile::icinga_agent(
     target    => "/etc/icinga2/zones.d/${parent_zone}/${::hostname}.conf",
   }
 
-  @@::icinga2::object::host { $::fqdn:
+  @@::icinga2::object::host { $downcase_fqdn:
     # Puppet 4 syntax
     * => merge({
       display_name => $::hostname,
