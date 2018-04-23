@@ -103,6 +103,10 @@ class profile::icinga_master {
   class { '::icinga2::feature::api':
     accept_commands => true,
     accept_config   => true,
+    zones           => {
+      'ZoneName' => {
+        'endpoints' => [ 'puppet' ],
+      }
   }
 
   icinga2::object::zone { ['global-templates', 'windows-commands', 'linux-commands']:
