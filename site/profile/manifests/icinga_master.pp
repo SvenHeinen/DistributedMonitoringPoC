@@ -105,7 +105,7 @@ class profile::icinga_master {
     accept_config   => true,
     zones           => {
       'ZoneName' => {
-        'endpoints' => [ 'puppet' ],
+        'endpoints' => [ 'NodeName' ],
       }
     },
     endpoints       => {
